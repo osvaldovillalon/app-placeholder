@@ -8,7 +8,7 @@ const app = document.querySelector('#app');
 
 async function loadPage(pageName) {
   console.log("Cargando:", pageName);
-  app.innerHTML = '<div class="w3-center">Cargando...</div>';
+  app.innerHTML = '<div>Cargando...</div>';
 
   try {
     let contenido = "";
@@ -28,11 +28,10 @@ async function loadPage(pageName) {
     app.innerHTML = contenido;
   } catch (error) {
     console.error(error);
-    app.innerHTML = `<div class="w3-panel w3-red">Error: ${error.message}</div>`;
+    app.innerHTML = `<div>Error: ${error.message}</div>`;
   }
 }
 
-// Asignar eventos a los enlaces
 const enlaces = document.querySelectorAll('nav a');
 for (let i = 0; i < enlaces.length; i++) {
   enlaces[i].addEventListener('click', (e) => {
